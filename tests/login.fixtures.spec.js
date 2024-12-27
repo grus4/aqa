@@ -19,11 +19,6 @@ test.describe("Login feature", () => {
     await expect(homePage.header.logoutBtn).toBeVisible({ timeout: 8000 });
   });
 
-  test("Login with valid data3 @login", async ({ loginPage, homePage }) => {
-    //loginPage.submitLoginForm(user.email, user.validPassword);
-    await expect(homePage.header.logoutBtn).toBeVisible({ timeout: 8000 });
-  });
-
   // test("Login with invalid data @login", async ({ loginPage }) => {
   //   //loginPage.submitLoginForm(user.email, user.invalidPassword);
 
