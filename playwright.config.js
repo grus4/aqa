@@ -30,7 +30,7 @@ const config = defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     baseURL: "https://automationexercise.com",
 
     screenshot: "only-on-failure",
