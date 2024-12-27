@@ -4,7 +4,7 @@ on: push
 jobs:
     login-test: 
       runs-on: ubuntu-22.04
-      container: 'mcr.microsoft.com/playwright:v1.49.0-jammy'
+      container: 'mcr.microsoft.com/playwright:v1.49.0-noble'
       steps:
         - name: "Login to test repository"
           uses: actions/checkout@v4
