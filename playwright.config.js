@@ -43,13 +43,13 @@ const config = defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: "setup:stg",
-    //   use: {
-    //     ...devices["Desktop Chrome"],
-    //   },
-    //   testMatch: "/tests/setup/**/*setup.js",
-    // },
+    {
+      name: "setup:stg",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+      testMatch: "/tests/setup/**/*setup.js",
+    },
 
     // {
     //   name: "teardown:stg",
@@ -64,11 +64,11 @@ const config = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
       },
-    }
-    //   dependencies: ["setup:stg"],
+    
+      dependencies: ["setup:stg"],
 
-    //   //teardown: "teardown:stg",
-    // },
+      //teardown: "teardown:stg",
+    },
 
     // {
     //   name: "dev",
