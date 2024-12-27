@@ -10,7 +10,7 @@ test.describe("Login feature", () => {
   });
 
   test("Login with valid data @login", async ({ loginPage, homePage }) => {
-    //loginPage.submitLoginForm(user.email, user.validPassword);
+    loginPage.submitLoginForm(user.email, user.validPassword);
     await expect(homePage.header.logoutBtn).toBeVisible({ timeout: 8000 });
   });
   
