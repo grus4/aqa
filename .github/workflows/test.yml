@@ -4,7 +4,7 @@ on: push
 jobs:
     login-test: 
       runs-on: ubuntu-22.04
-      container: 'mcr.microsoft.com/playwright:v1.49.0-noble'
+      container: 'mcr.microsoft.com/playwright:v1.49.0-jammy'
       steps:
         - name: "Login to test repository"
           uses: actions/checkout@v4
@@ -17,6 +17,8 @@ jobs:
             node-version: 20
         - name: "Install dependencies"
           run: npm ci
+        - name: Install Playwright Browsers
+          run: npx playwright install --with-deps
         - name: "Run tests"
           run: npm run test
         - name: "Upload report to artifacts"
