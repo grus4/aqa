@@ -59,23 +59,23 @@ const config = defineConfig({
     //   testMatch: "/tests/teardown/**/*tearDown.js",
     // },
 
-    // {
-    //   name: "chromium",
-    //   use: {
-    //     ...devices["Desktop Chrome"],
-    //   },
-
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+    }
     //   dependencies: ["setup:stg"],
 
     //   //teardown: "teardown:stg",
     // },
 
-    {
-      name: "dev",
-      use: {
-        ...devices["Desktop Firefox"],
-      },
-    },
+    // {
+    //   name: "dev",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //   },
+    // },
 
     // {
     //   name: "webkit",
