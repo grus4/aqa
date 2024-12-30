@@ -19,4 +19,5 @@ setup("Login and save state", async ({ page }) => {
   await page.context().storageState({
     path: USER_STORAGE_STATE_PATH,
   });
+
 });
