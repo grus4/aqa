@@ -30,7 +30,7 @@ const config = defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     baseURL: "https://automationexercise.com",
 
     screenshot: "only-on-failure",
@@ -43,13 +43,13 @@ const config = defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: "setup:stg",
-      use: {
-        ...devices["Desktop Chrome"],
-      },
-      testMatch: "/tests/setup/**/*setup.js",
-    },
+    // {
+    //   name: "setup:stg",
+    //   use: {
+    //     ...devices["Desktop Chrome"],
+    //   },
+    //   testMatch: "/tests/setup/**/*setup.js",
+    // },
 
     // {
     //   name: "teardown:stg",
@@ -64,8 +64,8 @@ const config = defineConfig({
       use: {
         ...devices["Desktop Chrome"],
       },
-
-      dependencies: ["setup:stg"],
+    
+      //dependencies: ["setup:stg"],
 
       //teardown: "teardown:stg",
     },

@@ -1,4 +1,8 @@
-import { test as customTest, expect as customExpect } from "@playwright/test";
+import {
+  test as customTest,
+  expect as customExpect,
+  request as apiRequest,
+} from "@playwright/test";
 import LoginPage from "../pageObject/LoginPage";
 import HomePage from "../pageObject/HomePage";
 import { USER_STORAGE_STATE_PATH } from "../data/constant.js";
@@ -9,7 +13,7 @@ export const test = customTest.extend({
     const context = await browser.newContext({
       storageState: USER_STORAGE_STATE_PATH,
     });
-    
+
     const customPage = await context.newPage();
 
     //test
@@ -29,6 +33,14 @@ export const test = customTest.extend({
     const homePage = new HomePage(page);
 
     await use(homePage);
+  },
+
+  request: async ({}, use) => {
+    const requestCtx = await apiRequest.newContext();
+
+    await use(requestCtx);
+
+    await requestCtx.dispose();
   },
 });
 
